@@ -5,7 +5,7 @@
       <div class="mheader">党员信息表</div>
       <div class="mainSign">
         <div id="canvasBox">
-          <canvas id="canvasItem" @mousemove="savePNG"></canvas>
+          <canvas id="canvasItem"></canvas>
           <div class="tools">
             <div class="toolsBtn">
               <el-button @click="clear">清除</el-button>
