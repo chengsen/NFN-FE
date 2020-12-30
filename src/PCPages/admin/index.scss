@@ -1,42 +1,113 @@
 .pheader {
-  height: 10px;
-  background-color: $mainColor;
+  height: 5rem;
+  padding: 0 3rem;
+  background-color: $--color-primary;
   color: white;
   display: flex;
   align-items: center;
+  font-size: 2rem;
 }
-.secHeader {
-  margin-bottom: 20px;
+
+.pbody {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin-top: 20px !important;
+  .box-card {
+    border-radius: 15px;
+    width: 150rem !important;
+    background-color: white;
+    padding: 20px;
+    .secHeader {
+      margin-bottom: 0.2rem;
+      margin: 0 20px 20px 0;
+      font-size: 2rem !important;
+    }
+    thead tr th {
+      background-color: #e4e4e438 !important;
+      color: black !important;
+      height: 10px !important;
+    }
+  }
+}
+
+.headerRow {
+  height: 60px;
+}
+
+.rowStyle {
+  height: 30px !important;
+}
+
+.cellStyle {
+  height: 50px !important;
+  font-size: 15px !important;
 }
 
 .tools {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 20px;
-  $toolsH: 35px;
-  $inputW: 200px;
+  margin-bottom: 10px;
   .branchSwitch {
     padding: 0;
-    width: $inputW;
-    height: $toolsH;
-    margin-right: 15px;
+    margin-right: 10px;
+    .el-input {
+      width: 250px !important;
+      height: 30px !important;
+      input {
+        padding-left: 10px !important;
+        font-size: 1.5rem !important;
+        font-weight: 500 !important;
+        // line-height: 1.5rem;
+      }
+      span {
+        font-size: 1.5rem !important;
+        font-weight: 500 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 40px;
+        span {
+          i {
+            line-height: 1.7rem !important;
+          }
+        }
+      }
+    }
   }
   .nameInput {
-    width: $inputW;
-    height: $toolsH;
-    margin-right: 15px;
+    width: 250px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 10px!important;
+    input {
+      margin: 0 !important;
+      padding-left: 10px !important;
+      font-size: 1.5rem !important;
+      font-weight: 500 !important;
+    }
   }
   .toolsBtn {
-    padding: 10px 20px;
-    width: auto;
-    height: $toolsH;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    width: 80px;
+    height: 40px !important;
+    span {
+      font-size: 1.5rem !important;
+    }
+
+    // line-height: 0.25rem;
   }
 }
 
 .el-table {
-  .headerStyles {
-    background: aquamarine !important;
-  }
+  // .headerStyles {
+  //   background: aquamarine !important;
+  // }
   .rowStyles {
     height: 50px;
   }
@@ -50,15 +121,38 @@
 }
 
 .showQrBtn {
+  display: flex !important;
+  flex-direction: column !important;
   button {
-    color: $mainColor;
+    color: $--color-primary;
     font-weight: 300;
   }
 }
 
 .pageSwitch {
   width: 100%;
+  height: 30px;
   margin-top: 10px;
   display: flex;
   justify-content: flex-end;
+}
+
+.el-pagination.is-background {
+  .el-pager {
+    li {
+      background-color: white !important;
+      border: 1px solid #9d9ea14f !important;
+      color: #606266 !important;
+    }
+    .active {
+      border: 1px;
+      border-color: $--color-primary !important;
+    }
+  }
+}
+.btn-prev,
+.btn-next li {
+  background-color: white !important;
+  border: 1px solid #9d9ea14f !important;
+  color: #606266 !important;
 }

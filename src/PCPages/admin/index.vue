@@ -1,14 +1,15 @@
 <template>
-  <el-container>
-    <el-header class="pheader">智慧党建后台管理系统</el-header>
-    <el-main>
-      <el-card class="box-card">
+  <div>
+    <div class="pheader">智慧党建后台管理系统</div>
+    <main class="pbody">
+      <div class="box-card">
         <div class="secHeader">党员信息采集表</div>
         <div class="tools">
           <el-select
             class="branchSwitch"
             v-model="currentBranch"
             placeholder="转入支部"
+            @change="onSearch"
           >
             <el-option
               v-for="item in branch"
@@ -22,6 +23,7 @@
             class="nameInput"
             v-model="userName"
             placeholder="姓名"
+            @keyup.enter.native="onSearch"
           ></el-input>
           <el-button class="toolsBtn" type="primary" @click="onSearch"
             >搜索</el-button
@@ -29,16 +31,22 @@
           <el-button class="toolsBtn" @click="onClear">取消</el-button>
         </div>
 
+        <!-- <div v-for="item in tableData" :key="item._id">
+          <div>{{item}}</div>
+          <div>
+            <div></div>
+          </div>
+        </div> -->
+
         <el-table
           :data="tableData"
           @cell-mouse-enter="cellEnter"
-          row-class-name="rowStyles"
-          cell-class-name="cellStyles"
-          header-row-class-name="headerStyles"
+          header-row-class-name="headerRow"
+          row-class-name="rowStyle"
+          cell-class-name="cellStyle"
         >
-          <el-table-column prop="userName" label="姓名" width="180">
-          </el-table-column>
-          <el-table-column prop="transferFrom" label="接受支部" width="180">
+          <el-table-column prop="userName" label="姓名"> </el-table-column>
+          <el-table-column prop="transferFrom" label="接受支部">
           </el-table-column>
           <el-table-column prop="updatedDate" label="提交时间">
           </el-table-column>
@@ -47,14 +55,16 @@
               <el-popover
                 class="showQrBtn"
                 placement="top-start"
-                width="200"
                 :aaa="scope.row"
-                trigger="click"
+                trigger="hover"
                 @show="showQrCode"
                 @after-leave="hideQrCode"
               >
-                <vue-qr :text="qrCodeUrl" :size="200"></vue-qr>
-                <a :href="qrCodeUrl">{{ qrCodeUrl }}</a>
+                <vue-qr
+                  :text="qrCodeUrl"
+                  :size="200"
+                  @click.native="openURL"
+                ></vue-qr>
                 <el-button type="text" slot="reference">查看二维码</el-button>
               </el-popover>
             </template>
@@ -72,13 +82,15 @@
           >
           </el-pagination>
         </div>
-      </el-card>
-    </el-main>
-  </el-container>
+      </div>
+    </main>
+  </div>
 </template>
 
 <script>
 import vueQr from 'vue-qr';
+import ElementUI from 'element-ui';
+import '@/styles/index.css';
 
 export default {
   components: {
@@ -115,6 +127,10 @@ export default {
     });
   },
   methods: {
+    openURL() {
+      console.log('点击时间');
+      window.open(this.qrCodeUrl, '__black');
+    },
     showQrCode() {
       console.log('show qr');
       this.showQr = true;

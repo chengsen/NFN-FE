@@ -21,6 +21,11 @@ const routes = [
     component: () => import('../mobilePages/infoShow'),
   },
   {
+    path: '/sign',
+    name: 'sign',
+    component: () => import('../mobilePages/sign'),
+  },
+  {
     path: '/pc/admin',
     name: 'admin',
     component: () => import('../PCPages/admin'),

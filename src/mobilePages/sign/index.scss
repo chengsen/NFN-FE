@@ -1,0 +1,83 @@
+.homeSign {
+  height: 100%;
+  width: 100%;
+  .containerSign {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .mheaderSign {
+      height: 60px;
+      width: 100%;
+      background-color: $--color-primary;
+      color: #fff;
+      display: flex;
+      font-size: 20px;
+      font-weight: 200;
+      justify-content: center;
+      align-items: center;
+    }
+    .mainSign {
+      height: 100%;
+      width: 100%;
+    //   background-color: black;
+      #canvasBox {
+        height: 100%;
+        width: 100%;
+        // background-color: red;
+
+        .tools {
+          margin: 10px;
+        //   background-color: white;
+          display: flex;
+          flex-direction: column;
+          .toolsBtn {
+            //   margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            button{
+                width: 50%;
+            }
+          }
+        }
+      }
+      #canvasItem {
+        width: 100%;
+        height: 80%;
+        background-color: white;
+      }
+    }
+    // .el-main {
+    //   height: 700px !important;
+    //   width: 100% !important;
+    //   #canvasBox {
+    //     overflow: hidden;
+    //   }
+
+    //   .canvasBody {
+    //     display: flex !important;
+    //     position: relative;
+    //     #canvas {
+    //       position: fixed;
+    //       background-color: white;
+    //       border: 1px solid rgb(223, 22, 22);
+    //       margin-right: 0;
+    //       top: 60px;
+    //       right: 0px;
+    //       bottom: 0px;
+    //     }
+
+    //     .submitBtn {
+    //       display: flex;
+    //       transform: rotate(90deg);
+    //       justify-content: space-between;
+    //       .imgShow {
+    //         background-color: white;
+    //         border: 1px solid black;
+    //         height: 15px;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}

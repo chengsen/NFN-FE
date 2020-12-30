@@ -1,23 +1,26 @@
 <template>
   <div class="home">
-    <el-container>
-      <el-header class='mheader'>党员信息表</el-header>
-      <el-main>
-        <el-form ref="form" :model="form" label-width="80px">
+    <div>
+      <div class="back" @click="backPev">返回</div>
+      <div class="mheader">党员信息表</div>
+      <div class="mbody">
+        <div class="formFrame">
           <el-card class="box-card">
-            <el-form-item label="姓名">
+            <div class="formItem">
+              <label class="formLabel">姓名</label>
               <el-input v-model="form.userName" placeholder="姓名"></el-input>
-            </el-form-item>
-
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="性别">
+            <div class="formItem">
+              <label class="formLabel">性别</label>
               <el-radio-group v-model="form.sex">
                 <el-radio-button label="男"></el-radio-button>
                 <el-radio-button label="女"></el-radio-button>
               </el-radio-group>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="民族">
+            <div class="formItem">
+              <label class="formLabel">民族</label>
               <el-select v-model="form.nation" placeholder="民族">
                 <el-option
                   v-for="item in nation"
@@ -27,33 +30,39 @@
                 >
                 </el-option>
               </el-select>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="身份证号"
-              ><el-input
+            <div class="formItem">
+              <label class="formLabel">身份证</label>
+              <el-input
                 v-model="form.idNumber"
                 placeholder="身份证号"
               ></el-input>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="出生日期">
+            <div class="formItem">
+              <label class="formLabel">出生日期</label>
               <el-date-picker
+                format="yyyy-MM-dd"
+                value-format="yyyy-MM-dd"
                 v-model="form.birthDate"
                 type="date"
                 placeholder="出生日期"
               >
               </el-date-picker>
-            </el-form-item>
+            </div>
           </el-card>
           <el-card class="box-card">
-            <el-form-item label="毕业学校">
+            <div class="formItem">
+              <label class="formLabel">毕业学校</label>
               <el-input
                 v-model="form.gradSchool"
                 placeholder="毕业学校"
               ></el-input>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="学历">
+            <div class="formItem">
+              <label class="formLabel">学历</label>
               <el-select v-model="form.eduBg" placeholder="学历">
                 <el-option
                   v-for="item in education"
@@ -63,17 +72,19 @@
                 >
                 </el-option>
               </el-select>
-            </el-form-item>
+            </div>
           </el-card>
           <el-card class="box-card">
-            <el-form-item label="人员类别">
+            <div class="formItem">
+              <label class="formLabel">人员类别</label>
               <el-radio-group v-model="form.peopleType">
                 <el-radio-button label="正式党员"></el-radio-button>
                 <el-radio-button label="预备党员"></el-radio-button>
               </el-radio-group>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="转入支部">
+            <div class="formItem">
+              <label class="formLabel">转入支部</label>
               <el-select v-model="form.transferFrom" placeholder="转入支部">
                 <el-option
                   v-for="item in branch"
@@ -83,77 +94,90 @@
                 >
                 </el-option>
               </el-select>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="入党日期"
-              ><el-date-picker
+            <div class="formItem">
+              <label class="formLabel">入党日期</label>
+              <el-date-picker
+              size="large"
+                format="yyyy-MM-dd"
+                value-format="yyyy-MM-dd"
                 v-model="form.partyJoinDate"
                 type="date"
                 placeholder="入党日期"
               >
               </el-date-picker>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="转正日期"
-              ><el-date-picker
+            <div class="formItem">
+              <label class="formLabel">转正日期</label>
+              <el-date-picker
+                format="yyyy-MM-dd"
+                value-format="yyyy-MM-dd"
                 v-model="form.turnTrueDate"
                 type="date"
                 placeholder="转正日期"
               >
               </el-date-picker>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="介绍人1"
-              ><el-input
+            <div class="formItem">
+              <label class="formLabel">介绍人1</label>
+              <el-input
                 v-model="form.introducer1"
                 placeholder="介绍人姓名（选填）"
               ></el-input>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="介绍人2"
-              ><el-input
+            <div class="formItem">
+              <label class="formLabel">介绍人2</label>
+              <el-input
                 v-model="form.introducer2"
                 placeholder="介绍人姓名（选填）"
               ></el-input>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="党籍正常">
+            <div class="formItem">
+              <label class="formLabel">党籍正常</label>
               <el-radio-group v-model="form.partyNormal">
                 <el-radio-button label="是"></el-radio-button>
                 <el-radio-button label="否"></el-radio-button>
               </el-radio-group>
-            </el-form-item>
+            </div>
             <el-divider></el-divider>
-            <el-form-item label="档案地">
+            <div class="formItem">
+              <label class="formLabel">档案地</label>
               <el-input
                 v-model="form.archiveAddr"
                 placeholder="地址精确到门牌号（选填）"
               ></el-input
-            ></el-form-item>
+            ></div>
           </el-card>
           <el-card class="box-card">
-            <el-form-item label="手机号码">
+            <div class="formItem">
+              <label class="formLabel">手机号码</label>
               <el-input v-model="form.phone" placeholder="手机号码"></el-input
-            ></el-form-item>
+            ></div>
             <el-divider></el-divider>
-            <el-form-item label="家庭住址">
+            <div class="formItem">
+              <label class="formLabel">家庭住址</label>
               <el-input
                 v-model="form.homeAddr"
                 placeholder="地址精确到门牌号"
               ></el-input
-            ></el-form-item>
+            ></div>
           </el-card>
-          <el-form-item>
+          <div class="submitBtn" label-width="0">
             <el-button
               type="primary"
               @click="onSubmit"
               :disabled="submitDisabled"
               >确认并签名</el-button
             >
-          </el-form-item>
-        </el-form>
-      </el-main>
-    </el-container>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -183,6 +207,7 @@ export default {
         archiveAddr: '',
         phone: '',
         homeAddr: '',
+        sign: '0',
       },
       submitDisabled: true,
     };
@@ -197,9 +222,13 @@ export default {
     },
   },
   methods: {
+    backPev() {
+      this.$router.go(-1);
+    },
     onSubmit() {
-      this.$router.push({ name: 'infoShow', params: { ...this.form } });
-      console.log(this.form);
+      // this.$router.push({ name: 'infoShow', params: { ...this.form } });
+      this.$router.push({ name: 'sign', params: { ...this.form } });
+      // console.log(this.form);
     },
     isSubmitEnable(newProps) {
       try {
@@ -223,6 +252,6 @@ export default {
 };
 </script>
 
-<style lang='scss'>
-@import 'index.scss'
+<style lang='scss' scoped>
+@import "index.scss";
 </style>

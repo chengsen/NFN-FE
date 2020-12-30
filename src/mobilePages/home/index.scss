@@ -1,54 +1,36 @@
-.mhome {
-  background-color: $mbackgroundColor;
-  height: 100vh;
-}
+
 
 .mbody {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  width: 100%;
 
-   .el-avatar{
-     margin-top: 50px;
-   }
+  .el-avatar {
+    margin-top: 50px;
+    width: 10rem;
+    height: 10rem;
+  }
 
-   h2{
+  h2 {
+    font-size: 2em;
     margin-top: 20px;
     font-weight: 400;
   }
 
-  div{
+  div {
     margin-top: 9px;
-    font-size: 17px;
-    color: #A4A4A4;
+    font-size: 1.5rem;
+    color: #a4a4a4;
   }
 
-  .el-button{
-    background-color: $mainColor;
-    border-color: $mainColor;
-    margin: 50px 20px 0px 20px;
+  .el-button {
+    padding: 0.9rem 0;
+    line-height: 2.7rem;
     margin-top: 50px;
-    height: 50px;
     width: 90vw;
-    font-size: 20px;
-    font-weight: 300;
-    &:hover{
-      background-color: $mainColor;
-      border-color: $mainColor;
-    }
-    .is-disabled{
-      background-color: $mainColor;
-      border-color: $mainColor;
-      margin: 50px 20px 0px 20px;
-      margin-top: 50px;
-      height: 50px;
-      width: 90vw;
-      font-size: 20px;
-      font-weight: 300;
-    }
+    font-size: $--btn-font-size;;
+    font-weight: 400;
   }
 }
-
-
-
-

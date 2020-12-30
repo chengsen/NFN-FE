@@ -1,0 +1,31 @@
+
+.mbody {
+  margin-top: 7rem;
+  background-color: #f7f7f7;
+  &:nth-child(1) {
+    margin-top: 5rem;
+  }
+}
+.row-item {
+  display: flex;
+  // margin: 1rem;
+  label {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-width: 8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1rem;
+    color: rgb(139, 139, 139);
+  }
+  div{
+    font-size: 1.5rem;
+  }
+}
+
+.signImg {
+  // background-color: aqua;
+  height: 100%;
+  width: 100%;
+}

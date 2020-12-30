@@ -3,17 +3,101 @@
   padding: 0;
 }
 
+#app {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.el-main {
+  margin-top: 100px !important;
+}
+
+.box-card {
+  box-shadow: none !important;
+  border: 0px;
+  margin: 20px 20px !important;
+}
+
+.el-main {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.el-button {
+  padding: 0.9rem 0!important;
+  line-height: 2.7rem!important;
+  font-size: $--btn-font-size!important;
+  font-weight: 400!important;
+}
+
+.back {
+  position: fixed;
+  color: white;
+  top: 1.4rem;
+  left: 1.5rem;
+  z-index: 200;
+  font-size: $--header-font-size;
+  font-weight: 200;
+  &:before {
+    content: "<";
+    margin-right: 0.3rem;
+  }
+}
+
 .mheader {
-  height: 100px;
-  background-color: $mainColor;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  height: $--header-height;
+  width: 100%;
+  background-color: $--color-primary;
   color: #fff;
   display: flex;
-  font-size: 20px;
-  font-weight: 200;
+  font-size: $--header-font-size;
+  font-weight: $--header-font-weight;
   justify-content: center;
   align-items: center;
 }
 
-.el-card{
-  box-shadow: none;
+html {
+  font-size: 5px;
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 639px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 719px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 749px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 799px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 11px;
+  }
 }

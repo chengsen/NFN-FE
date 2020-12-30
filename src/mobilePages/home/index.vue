@@ -1,15 +1,13 @@
 <template>
   <div class="mhome">
     <el-container>
-      <el-header class='mheader'>党员信息表</el-header>
-      <el-main class="mbody">
-        <el-avatar :size="120" :src="circleUrl"></el-avatar>
+      <div class="mheader">党员信息表</div>
+      <div class="mbody">
+        <el-avatar :src="require('@/assets/logo.png')"></el-avatar>
         <h2>党员信息表</h2>
         <div>请相关人员认真填写</div>
-        <router-link to="/infoEdit">
-          <el-button type="primary">开始填写</el-button>
-        </router-link>
-      </el-main>
+        <el-button type="primary" @click="onSubmit">开始填写</el-button>
+      </div>
     </el-container>
   </div>
 </template>
@@ -17,9 +15,14 @@
 <script>
 export default {
   name: 'home',
+  methods: {
+    onSubmit() {
+      this.$router.push({ name: 'infoEdit' });
+    },
+  },
 };
 </script>
 
-<style lang="scss">
-@import 'index.scss'
+<style lang="scss" scoped>
+@import "index.scss";
 </style>
