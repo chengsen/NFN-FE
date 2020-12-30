@@ -1,0 +1,64 @@
+.pheader {
+  height: 10px;
+  background-color: $mainColor;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.secHeader {
+  margin-bottom: 20px;
+}
+
+.tools {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  $toolsH: 35px;
+  $inputW: 200px;
+  .branchSwitch {
+    padding: 0;
+    width: $inputW;
+    height: $toolsH;
+    margin-right: 15px;
+  }
+  .nameInput {
+    width: $inputW;
+    height: $toolsH;
+    margin-right: 15px;
+  }
+  .toolsBtn {
+    padding: 10px 20px;
+    width: auto;
+    height: $toolsH;
+  }
+}
+
+.el-table {
+  .headerStyles {
+    background: aquamarine !important;
+  }
+  .rowStyles {
+    height: 50px;
+  }
+  .cellStyles {
+    padding: 40px;
+  }
+  th,
+  td {
+    padding: 10px 20px !important;
+  }
+}
+
+.showQrBtn {
+  button {
+    color: $mainColor;
+    font-weight: 300;
+  }
+}
+
+.pageSwitch {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}

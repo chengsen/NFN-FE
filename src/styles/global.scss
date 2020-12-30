@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mheader {
+  height: 100px;
+  background-color: $mainColor;
+  color: #fff;
+  display: flex;
+  font-size: 20px;
+  font-weight: 200;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-card{
+  box-shadow: none;
+}

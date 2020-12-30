@@ -1,0 +1,54 @@
+.mhome {
+  background-color: $mbackgroundColor;
+  height: 100vh;
+}
+
+.mbody {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   .el-avatar{
+     margin-top: 50px;
+   }
+
+   h2{
+    margin-top: 20px;
+    font-weight: 400;
+  }
+
+  div{
+    margin-top: 9px;
+    font-size: 17px;
+    color: #A4A4A4;
+  }
+
+  .el-button{
+    background-color: $mainColor;
+    border-color: $mainColor;
+    margin: 50px 20px 0px 20px;
+    margin-top: 50px;
+    height: 50px;
+    width: 90vw;
+    font-size: 20px;
+    font-weight: 300;
+    &:hover{
+      background-color: $mainColor;
+      border-color: $mainColor;
+    }
+    .is-disabled{
+      background-color: $mainColor;
+      border-color: $mainColor;
+      margin: 50px 20px 0px 20px;
+      margin-top: 50px;
+      height: 50px;
+      width: 90vw;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+}
+
+
+
+

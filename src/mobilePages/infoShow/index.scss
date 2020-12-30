@@ -1,0 +1,14 @@
+.row-item {
+  display: flex;
+  margin: 1rem;
+  label {
+    width: 5rem;
+  }
+}
+
+br {
+  height: 100px;
+  background-color: darkmagenta;
+  border: none;
+  border-top:2px dotted
+}
