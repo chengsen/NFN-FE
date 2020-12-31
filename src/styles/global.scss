@@ -40,6 +40,7 @@ body {
   top: 1.4rem;
   left: 1.5rem;
   z-index: 200;
+  cursor: pointer;
   font-size: $--header-font-size;
   font-weight: 200;
   &:before {

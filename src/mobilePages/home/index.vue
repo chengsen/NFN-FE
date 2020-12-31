@@ -1,7 +1,7 @@
 <template>
   <div class="mhome">
     <el-container>
-      <div class="mheader">党员信息表</div>
+      <mheader :back="false"></mheader>
       <div class="mbody">
         <el-avatar :src="require('@/assets/logo.png')"></el-avatar>
         <h2>党员信息表</h2>

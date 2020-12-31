@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <!-- <div> -->
-    <div class="back" @click="backPev">返回</div>
-    <div class="mheader">党员信息表</div>
+    <mheader :back="true"></mheader>
     <div class="mbody">
       <el-card class="box-card">
         <div class="row-item">
@@ -113,11 +111,12 @@
     <el-dialog title="提交成功" :visible.sync="centerDialogVisible" center>
       <span>信息提交成功，可关闭该页面</span>
       <span slot="footer" class="dialog-footer">
-        <el-button class="dialogBtn" type="primary" @click="close">确 定</el-button>
+        <el-button class="dialogBtn" type="primary" @click="close"
+          >确 定</el-button
+        >
       </span>
     </el-dialog>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -130,13 +129,17 @@ export default {
   },
   mounted() {
     this.form = this.$route.params;
-    console.log(this.$route.params);
+    this.changeData();
   },
   methods: {
-    backPev() {
-      this.$router.go(-1);
+    changeData() {
+      const { form } = this;
+      Object.keys(form).forEach((key) => {
+        if (form[key] === '') {
+          form[key] = '-';
+        }
+      });
     },
-
     onBackToEdit() {
       this.$router.go(-2);
     },

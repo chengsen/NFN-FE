@@ -1,0 +1,40 @@
+.greet {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  .el-button {
+    width: 100px;
+    height: 35px;
+  }
+  //   font-size: 20px;
+  //   user-select: none;
+}
+
+.signBody {
+  position: relative;
+}
+
+#canvasBox {
+  display: flex;
+  flex-direction: column;
+  canvas {
+    flex: 1;
+    // background-color: white;
+    cursor: crosshair;
+    z-index: 100;
+  }
+}
+
+.signMsg {
+  z-index: 50;
+  display: block;
+  background-color: white;
+  position: absolute;
+  color: #c9c9c9;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   top: 100px;
+  //   left: 45%;
+}

@@ -31,13 +31,6 @@
           <el-button class="toolsBtn" @click="onClear">取消</el-button>
         </div>
 
-        <!-- <div v-for="item in tableData" :key="item._id">
-          <div>{{item}}</div>
-          <div>
-            <div></div>
-          </div>
-        </div> -->
-
         <el-table
           :data="tableData"
           @cell-mouse-enter="cellEnter"
@@ -89,17 +82,15 @@
 
 <script>
 import vueQr from 'vue-qr';
-import ElementUI from 'element-ui';
-import '@/styles/index.css';
+import { branch } from '../../data/index.json';
 
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     vueQr,
   },
   data() {
     return {
-      branch: ['南方网第一党支部', '南方网第二党支部', '南方日报集团第一党支部', '南方日报集团第二党支部', '南方杂志党支部'],
+      branch,
       // 查询需要的
       currentBranch: '',
       userName: '',
@@ -113,12 +104,12 @@ export default {
       currentRow: -1,
       totalItems: 0, // 总条目数
       currentPage: 1,
-      pageSize: 10, // 每页显示条目个数，支持 .sync 修饰符
+      pageSize: 10, // 每页显示条目个数
     };
   },
   created() {
     // 第一次挂载时就加载第一页数据
-    fetch('http://127.0.0.1:7001/api/v2/userQuery?page=1', {
+    fetch(`${this.Common.prefixUrl}/userQuery?page=1`, {
       method: 'GET',
     }).then((response) => response.json()).then((res) => {
       console.log('created 返回第一页数据', res);
@@ -141,10 +132,9 @@ export default {
     },
     // 根据页数查询数据
     getData() {
-      fetch(`http://127.0.0.1:7001/api/v2/userQuery?page=${this.currentPage}`, {
+      fetch(`${this.Common.prefixUrl}/userQuery?page=${this.currentPage}`, {
         method: 'GET',
       }).then((response) => response.json()).then((res) => {
-        console.log('get 返回的数据', res);
         this.tableData = res.result;
         this.totalItems = res.resultCount;
       });
@@ -162,7 +152,6 @@ export default {
     /* eslint no-underscore-dangle: 0 */
     cellEnter(row, column, cell, event) {
       this.qrCodeUrl = `http://localhost:8080/pc/infoShow?_id=${row._id}`;
-      console.log('二维码显示', this.qrCodeUrl);
     },
     // 搜索返回
     onSearch() {
@@ -171,10 +160,9 @@ export default {
         this.currentPage = 1;
       }
       console.log(this.currentBranch, this.userName);
-      fetch(`http://127.0.0.1:7001/api/v2/userQuery?page=${this.currentPage}&branch=${this.currentBranch}&userName=${this.userName}`, {
+      fetch(`${this.Common.prefixUrl}/userQuery?page=${this.currentPage}&branch=${this.currentBranch}&userName=${this.userName}`, {
         method: 'GET',
       }).then((response) => response.json()).then((res) => {
-        console.log('搜索返回的数据', res);
         this.tableData = res.result;
         this.totalItems = res.resultCount;
       });

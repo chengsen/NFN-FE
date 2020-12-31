@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <div>
-      <div class="back" @click="backPev">返回</div>
-      <div class="mheader">党员信息表</div>
+      <mheader :back="true"></mheader>
       <div class="mbody">
         <div class="formFrame">
           <el-card class="box-card">
@@ -182,12 +181,12 @@
 </template>
 
 <script>
+import jsonData from '../../data/index.json';
+
 export default {
   data() {
     return {
-      nation: ['汉族', '壮族', '满族', '回族', '珞巴族', '赫哲族', '塔塔尔族', '独龙族', '鄂伦春族', '门巴族', '乌孜别克族', '裕固族', '俄罗斯族', '保安族', '德昂族', '基诺族', '京族', '怒族', '鄂温克族', '普米族', '阿昌族', '塔吉克族', '布朗族', '撒拉族', '毛南族', '景颇族', '达斡尔族', '柯尔克孜族', '锡伯族', '仫佬族', '土族', '羌族', '纳西族', '佤族', '水族', '拉祜族', '高山族', '东乡族', '仡佬族', '傈僳族', '畲族', '傣族', '黎族', '哈萨克族', '哈尼族', '白族', '朝鲜族', '瑶族', '侗族', '布依族', '藏族', '蒙古族', '彝族', '土家族', '维吾尔族', '苗族'],
-      education: ['博士', '硕士', '本科', '大专', '高中', '中专', '初中', '小学', '其他'],
-      branch: ['南方网第一党支部', '南方网第二党支部', '南方日报集团第一党支部', '南方日报集团第二党支部', '南方杂志党支部'],
+      ...jsonData,
       optInput: ['introducer1', 'introducer2', 'archiveAddr'],
       form: {
         userName: '',
@@ -227,7 +226,7 @@ export default {
     },
     onSubmit() {
       // this.$router.push({ name: 'infoShow', params: { ...this.form } });
-      this.$router.push({ name: 'sign', params: { ...this.form } });
+      this.$router.push({ name: 'signnew', params: { ...this.form } });
       // console.log(this.form);
     },
     isSubmitEnable(newProps) {

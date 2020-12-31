@@ -10,11 +10,6 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.14.1",
-    "postcss": "^8.2.2",
-    "postcss-import": "^14.0.0",
-    "postcss-loader": "^4.1.0",
-    "postcss-pxtorem": "^5.1.1",
-    "postcss-url": "^10.1.1",
     "sass": "^1.30.0",
     "vue": "^2.6.11",
     "vue-qr": "^2.3.0",

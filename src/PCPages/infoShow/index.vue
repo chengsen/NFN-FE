@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div>
-      <div class="mheader">党员信息表</div>
+      <mheader :back="false"></mheader>
       <div class="mbody">
         <el-card class="box-card">
           <div class="row-item">
@@ -116,11 +116,10 @@ export default {
   },
   mounted() {
     // eslint-disable-next-line no-underscore-dangle
-    const url = `http://127.0.0.1:7001/api/v2/userById?_id=${this.$route.query._id}`;
+    const url = `${this.Common.prefixUrl}/userById?_id=${this.$route.query._id}`;
     fetch(url, {
       method: 'GET',
     }).then((response) => response.json()).then((res) => {
-      console.log('返回的数据', res);
       this.form = res.result;
     });
   },

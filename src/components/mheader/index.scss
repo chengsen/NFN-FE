@@ -1,0 +1,29 @@
+.back {
+  position: fixed;
+  color: white;
+  top: 1.4rem;
+  left: 1.5rem;
+  z-index: 200;
+  cursor: pointer;
+  font-size: $--header-font-size;
+  font-weight: 200;
+  &:before {
+    content: "<";
+    margin-right: 0.3rem;
+  }
+}
+
+.mheader {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  height: $--header-height;
+  width: 100%;
+  background-color: $--color-primary;
+  color: #fff;
+  display: flex;
+  font-size: $--header-font-size;
+  font-weight: $--header-font-weight;
+  justify-content: center;
+  align-items: center;
+}
