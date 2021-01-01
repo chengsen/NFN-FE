@@ -50,7 +50,6 @@
                 placement="top-start"
                 :aaa="scope.row"
                 trigger="hover"
-                @show="showQrCode"
                 @after-leave="hideQrCode"
               >
                 <vue-qr
@@ -96,7 +95,6 @@ export default {
       userName: '',
       isSearch: false, // 判断是否在查询
 
-      showQr: false,
       qrCodeUrl: '',
 
       tableData: [],
@@ -109,26 +107,17 @@ export default {
   },
   created() {
     // 第一次挂载时就加载第一页数据
+    document.title = '智慧党建后台管理系统';
     fetch(`${this.Common.prefixUrl}/userQuery?page=1`, {
       method: 'GET',
     }).then((response) => response.json()).then((res) => {
-      console.log('created 返回第一页数据', res);
       this.tableData = res.result;
       this.totalItems = res.resultCount;
     });
   },
   methods: {
     openURL() {
-      console.log('点击时间');
       window.open(this.qrCodeUrl, '__black');
-    },
-    showQrCode() {
-      console.log('show qr');
-      this.showQr = true;
-    },
-    hideQrCode() {
-      this.showQr = false;
-      console.log('hide qr');
     },
     // 根据页数查询数据
     getData() {

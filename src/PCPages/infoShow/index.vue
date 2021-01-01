@@ -114,6 +114,9 @@ export default {
       centerDialogVisible: false,
     };
   },
+  created() {
+    document.title = '党员信息';
+  },
   mounted() {
     // eslint-disable-next-line no-underscore-dangle
     const url = `${this.Common.prefixUrl}/userById?_id=${this.$route.query._id}`;

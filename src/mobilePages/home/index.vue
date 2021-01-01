@@ -15,6 +15,9 @@
 <script>
 export default {
   name: 'home',
+  created() {
+    document.title = '党员信息';
+  },
   methods: {
     onSubmit() {
       this.$router.push({ name: 'infoEdit' });
